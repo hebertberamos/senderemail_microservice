@@ -4,15 +4,16 @@ import com.microserviceprojects.emailsender.entities.enums.StatusEmail;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Table(name = "tb_email")
 public class Email {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String ownerReference; //Referencia do proprietário que está mandando a mensagem
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    private String ownerReference;
     private String emailFrom;
     private String emailTo;
     private String subject;
@@ -23,7 +24,7 @@ public class Email {
 
     public Email(){}
 
-    public Email(Long id, String ownerReference, String emailFrom, String emailTo, String subject, String text, Instant sendDateEmail, StatusEmail statusEmail) {
+    public Email(UUID id, String ownerReference, String emailFrom, String emailTo, String subject, String text, Instant sendDateEmail, StatusEmail statusEmail) {
         this.id = id;
         this.ownerReference = ownerReference;
         this.emailFrom = emailFrom;
@@ -42,11 +43,11 @@ public class Email {
         this.text = text;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
