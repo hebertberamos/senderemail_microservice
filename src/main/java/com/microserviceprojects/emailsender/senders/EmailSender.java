@@ -1,25 +1,17 @@
-package com.microserviceprojects.emailsender.servicies;
+package com.microserviceprojects.emailsender.senders;
 
-import com.microserviceprojects.emailsender.dtos.EmailDto;
 import com.microserviceprojects.emailsender.entities.Email;
 import com.microserviceprojects.emailsender.entities.enums.StatusEmail;
-import com.microserviceprojects.emailsender.repositories.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Component;
 
 import java.time.Instant;
-import java.util.List;
-import java.util.stream.Collectors;
 
-@Service
-public class EmailService {
-
-    @Autowired
-    private EmailRepository emailRepository;
+@Component
+public class EmailSender {
 
     @Autowired
     private JavaMailSender emailSender;
@@ -45,9 +37,4 @@ public class EmailService {
 //        }
     }
 
-    @Transactional(readOnly = true)
-    public List<EmailDto> allEmails() {
-        List<Email> allEmails = emailRepository.findAll();
-        return allEmails.stream().map(x -> new EmailDto(x)).collect(Collectors.toList());
-    }
 }

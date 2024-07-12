@@ -1,23 +1,11 @@
 package com.microserviceprojects.emailsender.dtos;
 
-
-
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-
 public class EmailDto {
 
-    @NotBlank(message = "Owner reference is mandatory")
     private String ownerReference;
-    @NotBlank(message = "Email from is mandatory")
-    @Email
     private String emailFrom;
-    @NotBlank(message = "Email to is mandatory")
-    @Email
     private String emailTo;
-    @NotBlank(message = "Subject is mandatory")
     private String subject;
-    @NotBlank(message = "Text message is mandatory")
     private String text;
 
     public EmailDto(String ownerReference, String emailFrom, String emailTo, String subject, String text) {

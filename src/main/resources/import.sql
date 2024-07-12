@@ -1,1 +1,0 @@
---INSERT INTO tb_email (owner_Reference, email_From, email_To, subject, text, send_Date_Email, status_Email) VALUES ('hebert comercial', 'hebertramos09@gmail.com', 'comercialhebertberamos@gmail.com', 'First test', 'Doing the first test but about the data base', TIMESTAMP WITH TIME ZONE '2024-06-29T12:43:00.1772554', 1 );
