@@ -9,13 +9,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    @Value("${spring.rabbitmq.queue}")
-    private String queue;
+    @Value("${spring.rabbitmq.queue.email}")
+    private String emailQueue;
+
+    @Value("${spring.rabbitmq.queue.sms}")
+    private String smsQueue;
 
     // =>  Generate a new queue
     @Bean
-    public Queue queue(){
-        return new Queue(queue, true);
+    public Queue emailQueue(){
+        return new Queue(emailQueue, true);
+    }
+
+    @Bean
+    public Queue smsQueue(){
+        return new Queue(smsQueue, true);
     }
 
     // =>  Global converter to receive the EmailDTO

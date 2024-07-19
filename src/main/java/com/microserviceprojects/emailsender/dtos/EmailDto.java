@@ -16,14 +16,6 @@ public class EmailDto {
         this.text = text;
     }
 
-    public EmailDto(com.microserviceprojects.emailsender.entities.Email entity){
-        ownerReference = entity.getOwnerReference();
-        emailFrom = entity.getEmailFrom();
-        emailTo = entity.getEmailTo();
-        subject = entity.getSubject();
-        text = entity.getText();
-    }
-
     public String getOwnerReference() {
         return ownerReference;
     }

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.microserviceprojects</groupId>
-	<artifactId>emailsender</artifactId>
+	<artifactId>messagesender</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>emailsender</name>
 	<description>Email sending microservice project</description>
@@ -54,6 +54,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.twilio.sdk</groupId>
+			<artifactId>twilio</artifactId>
+			<version>10.4.1</version>
 		</dependency>
 
 

@@ -32,9 +32,6 @@ public class EmailSender {
             emailModel.setStatusEmail(StatusEmail.ERROR);
             System.out.println("MailException error:"+  e.getMessage());
         }
-//        finally{ // =>  Turn on when exist a configured database
-//            return emailRepository.save(emailModel);
-//        }
     }
 
 }
